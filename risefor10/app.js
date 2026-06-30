@@ -59,18 +59,9 @@ function openPanel(country){
 }
 function closePanel(){panel.classList.remove("open");}
 
-// pan & zoom
+// pan & zoom — wheel/scroll zoom disabled so it never fights page scroll.
+// Drag-to-pan and pinch-to-zoom (touch) still work.
 let vb={x:0,y:0,w:960,h:500},drag=false,ds={},vs={};
-svg.addEventListener("wheel",e=>{
-  e.preventDefault();
-  const r=svg.getBoundingClientRect();
-  const mx=(e.clientX-r.left)/r.width*vb.w+vb.x,my=(e.clientY-r.top)/r.height*vb.h+vb.y;
-  const sc=e.deltaY>0?1.14:.88;
-  vb.w=Math.min(960,Math.max(100,vb.w*sc));vb.h=vb.w*(500/960);
-  vb.x=Math.max(0,Math.min(960-vb.w,mx-(e.clientX-r.left)/r.width*vb.w));
-  vb.y=Math.max(0,Math.min(500-vb.h,my-(e.clientY-r.top)/r.height*vb.h));
-  svg.setAttribute("viewBox",`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);
-},{passive:false});
 svg.addEventListener("mousedown",e=>{if(e.button!==0)return;drag=true;ds={x:e.clientX,y:e.clientY};vs={x:vb.x,y:vb.y};e.preventDefault();});
 window.addEventListener("mousemove",e=>{if(!drag)return;const r=svg.getBoundingClientRect();vb.x=Math.max(0,Math.min(960-vb.w,vs.x-(e.clientX-ds.x)/r.width*vb.w));vb.y=Math.max(0,Math.min(500-vb.h,vs.y-(e.clientY-ds.y)/r.height*vb.h));svg.setAttribute("viewBox",`${vb.x} ${vb.y} ${vb.w} ${vb.h}`);});
 window.addEventListener("mouseup",()=>{drag=false;});
