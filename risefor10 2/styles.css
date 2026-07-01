@@ -189,3 +189,28 @@ footer a{color:rgba(255,255,255,.5);text-decoration:none}
   .participate-grid{flex-direction:column;align-items:center}
   .p-box{max-width:100%;width:100%}
 }
+
+/* 6. Hero gradient background */
+.sec-hero{
+  background: linear-gradient(160deg, #f0edff 0%, #e8f8f7 50%, #ffffff 100%);
+}
+
+/* Map subcopy */
+.map-subcopy{font-size:13px;color:var(--muted);margin:-6px 0 20px;text-align:center}
+
+/* Participate list card (replaces grid) */
+.p-list-card{
+  max-width:540px;margin:0 auto;
+  background:#fff;border:2px solid var(--border);border-radius:14px;
+  padding:8px 0;
+}
+.p-list-item{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 22px;font-size:15px;color:var(--text);line-height:1.5;
+  border-bottom:1px solid var(--border);
+}
+.p-list-item:last-child{border-bottom:none}
+.p-list-item span{font-size:20px;flex-shrink:0;margin-top:1px}
+
+/* Hide old grid classes if any leftover */
+.participate-sub,.p-box,.participate-grid{display:none}
