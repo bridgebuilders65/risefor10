@@ -125,8 +125,6 @@ async function pollParticipation(){
     liveCount=data.count||0;
     liveByCountry=data.byCountry||{};
     const total=liveCount;
-    const counterEl=document.getElementById("liveCounterN");
-    if(counterEl)counterEl.textContent=total;
     const mstatEl=document.getElementById("mstatTotal");
     if(mstatEl)mstatEl.textContent=total+"+";
     document.querySelectorAll(".live-pin-group").forEach(el=>el.remove());
