@@ -124,7 +124,7 @@ async function pollParticipation(){
     const data=await res.json();
     liveCount=data.count||0;
     liveByCountry=data.byCountry||{};
-    const total=liveCount+63;
+    const total=liveCount;
     const counterEl=document.getElementById("liveCounterN");
     if(counterEl)counterEl.textContent=total;
     const mstatEl=document.getElementById("mstatTotal");
