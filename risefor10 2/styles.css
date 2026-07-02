@@ -214,3 +214,9 @@ footer a{color:rgba(255,255,255,.5);text-decoration:none}
 
 /* Hide old grid classes if any leftover */
 .participate-sub,.p-box,.participate-grid{display:none}
+
+.participate-section { padding-bottom: 24px; }
+.sec-map { padding-top: 24px; padding-bottom: 24px; }
+.sec-origin { padding-top: 24px; padding-bottom: 24px; }
+.sec-video { padding-top: 0; padding-bottom: 24px; }
+.sec-about { padding-top: 24px; }
