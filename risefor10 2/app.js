@@ -93,8 +93,8 @@ svg.addEventListener("touchend",()=>{pinchDist=null;},{passive:true});
 var ytPlayer=null,muted=true,ytReady=false;
 function onYouTubeIframeAPIReady(){
   ytPlayer=new YT.Player("ytWrap",{
-    videoId:"upLldio37qk",
-    playerVars:{autoplay:1,mute:1,controls:0,loop:1,playlist:"upLldio37qk",modestbranding:1,rel:0,iv_load_policy:3,disablekb:1,fs:0,enablejsapi:1,origin:location.origin||"*"},
+    videoId:"ayNIZgsUFdk",
+    playerVars:{autoplay:1,mute:1,controls:0,loop:1,playlist:"ayNIZgsUFdk",modestbranding:1,rel:0,iv_load_policy:3,disablekb:1,fs:0,enablejsapi:1,origin:location.origin||"*"},
     events:{
       onReady:function(e){e.target.mute();e.target.playVideo();},
       onStateChange:function(e){
